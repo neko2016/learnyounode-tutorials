@@ -18,5 +18,4 @@ function filter_ls () {
     })
 }
 
-
 filter_ls();
