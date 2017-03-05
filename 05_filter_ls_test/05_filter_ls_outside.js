@@ -70,18 +70,3 @@ function filter_ls (path, type){
 }
 
 filter_ls(path, type);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
