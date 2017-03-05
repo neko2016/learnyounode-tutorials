@@ -3,16 +3,16 @@ var path = "../05_dir"; // both relative and abosolute paths work; I used the re
 var postfix = "txt";
 
 function filter_ls () {
-    fs.readdir(path, function printFile(err, fileList) {
+    fs.readdir(path, function printFile(err, files) {
         if (err) {
             console.log(err);
             return err;
         } 
-        for (var i = 0; i < fileList.length; i++) {
-            var file = fileList[i].split('.')
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i].split('.')
             //console.log(file);
             if (file[1] == postfix) {
-                console.log(fileList[i]);
+                console.log(files[i]);
             }
         }
     })

@@ -51,19 +51,19 @@
 
 var fs = require('fs');
 var path = '05_dir'; // both relative and abosolute paths work; I used the relative path here
-var type = 'txt';
+var type = 'js';
 
 function filter_ls (path, type){
-  fs.readdir(path, function reddir(err, filelist){
+  fs.readdir(path, function reddir(err, files){
     if (err) {
-            console.log(err);
-            return err;
+        console.log(err);
+        return err;
     }
-    for (var i = 0; i < filelist.length; i++) {
-      var file = filelist[i].split('.')
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i].split('.')
       // console.log(file);
       if (file[1] === type){
-        console.log(filelist[i])
+        console.log(files[i])
       }
     }
   })
