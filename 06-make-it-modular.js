@@ -10,8 +10,5 @@ mod(dir, ext, function(err, list){
     list.forEach(function(file){
         console.log(file);
     })
-    // for (var i = 0; i < list.length; i++){
-    //     console.log(list[i]);
-    // }
 })
 
