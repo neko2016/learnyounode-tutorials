@@ -50,24 +50,36 @@
 */
 
 var fs = require('fs');
-// var path = require('path')
 var path = process.argv[2];
 var type = process.argv[3];
 
-function file_filter (path, type){
-  fs.readdir(path, function filter(err, files){
-    if (err) {
-      console.log(err);
-      return err;
+fs.readdir(path, function filter(err, files){
+  if (err) {
+    console.log(err);
+    return err;
+  }
+  for (var i = 0; i < files.length; i++) {
+    var file_prefix = files[i].split('.')
+    if (file_prefix[1] === type){
+      console.log(files[i])
     }
-    for (var i = 0; i < files.length; i++) {
-      var file_prefix = files[i].split('.')
-      console.log(file_prefix);
-      if (file_prefix[1] === type){
-        console.log(files[i])
-      }
-    }
-  })
-}
+  }
+})
 
-file_filter(path, type);
+// official solution
+// var fs = require('fs')
+// var path = require('path')
+
+// var folder = process.argv[2]
+// var ext = '.' + process.argv[3]
+
+// fs.readdir(folder, function (err, files) {
+//  if (err) return console.error(err)
+//  files.forEach(function (file) {
+//    if (path.extname(file) === ext) {
+//      console.log(file)
+//    }
+//  })
+// })
+
+
