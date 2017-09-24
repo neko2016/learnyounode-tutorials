@@ -52,7 +52,7 @@ Write a program that accepts one or more numbers as command-line arguments
 
 */
 
-console.log(process.argv);
+// console.log(process.argv);
 
 var array = process.argv;
 var sum = 0;
